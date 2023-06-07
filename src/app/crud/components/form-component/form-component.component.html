@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col">
+
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+          <!-- Nombre -->
+          <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Nombre de usuario</label>
+              <div class="col-sm-9">
+                  <input type="text"
+                         class="form-control"
+                         formControlName="name">
+
+                  <span *ngIf="isValidField('name')" class="form-text text-danger">
+                      Debe de ser en formato de nombre y apellido
+                  </span>
+              </div>
+          </div>
+
+          <!-- Password -->
+          <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Contraseña</label>
+              <div class="col-sm-9">
+                  <input type="password"
+                         class="form-control"
+                         formControlName="password">
+
+                  <span *ngIf="isValidField('password')" class="form-text text-danger">
+                       La contraseña debe de ser mayor de 6 caracteres.
+                  </span>
+              </div>
+          </div>
+
+          <!-- Password2 -->
+          <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Confirmar la Contraseña</label>
+              <div class="col-sm-9">
+                  <input type="password"
+                         class="form-control"
+                         formControlName="password2">
+
+                  <span *ngIf="isValidField('password2')" class="form-text text-danger">
+                       Las contraseñas deben de ser iguales
+                  </span>
+              </div>
+          </div>
+
+          <!-- Email -->
+          <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email"
+                       class="form-control"
+                       formControlName="email">
+                <span *ngIf="isValidField('email')" class="form-text text-danger">
+                    mensaje de error del email
+                </span>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Enviame ofertas promocionales</label>
+            <div class="col-sm-9">
+                <input type="checkbox"
+                       class="form-check-inputs"
+                       formControlName="offers"
+                >
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">País</label>
+            <div class="col-sm-9">
+                <select class="form-control"
+                       formControlName="country">
+                       <option> Armenia </option>
+                       <option> España </option>
+                       <option> Japón </option>
+                       <option> Qatar </option>
+                       <option> Eslovaquia </option>
+                       <option> Sudán </option>
+                       <option> Finlandia </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="col-sm-3 col-form-label">Ciudad</label>
+          <div class="col-sm-9">
+              <input type="text"
+                     class="form-control"
+                     formControlName="city">
+          </div>
+      </div>
+
+
+          <div class="row">
+              <div class="col">
+                  <button class="btn btn-primary float-end"
+                          type="submit">
+                      Crear
+                  </button>
+              </div>
+          </div>
+
+
+      </form>
+  </div>
+</div>
